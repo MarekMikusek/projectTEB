@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDataTabel extends Migration
+class CreateDateKeysTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateDataTabel extends Migration
      */
     public function up()
     {
-        Schema::create('data', function (Blueprint $table) {
+        Schema::create('date_keys', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->date('date');
+            $table->string('key');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateDataTabel extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('data');
+        Schema::dropIfExists('date_keys');
     }
 }
