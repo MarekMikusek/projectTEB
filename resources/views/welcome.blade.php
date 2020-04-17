@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>MM recruit</title>
-
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <script>window.Laravel = {csrfToken: '{{ csrf_token() }}'}</script>
         <!-- Styles -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -19,10 +20,9 @@
     <body>
         <div class="flex-center position-ref full-height container">
             <h1 class="text-center m-4">Projekt rekrutacyjny Marek Mikusek dla TEB Akademia</h1>
-            <h5 class="text-center m-4">Wybierz wojwództwo, podaj email w domenie com.pl oraz wybierz datę początkową i końcową.</h5>
             <div id ="app">
                 <app-div></app-div>
-                
+
             </div>
         </div>
         <script src="{{ asset('js/app.js') }}"></script>
